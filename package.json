@@ -1,0 +1,17 @@
+{
+  "name": "my_server",
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "yarn clean && tsc",
+    "start": "node dist/server.js",
+    "dev": "nodemon"
+  },
+  "packageManager": "yarn@3.6.4",
+  "devDependencies": {
+    "@types/node": "^24.0.13",
+    "nodemon": "^3.1.10",
+    "rimraf": "^6.0.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  }
+}
