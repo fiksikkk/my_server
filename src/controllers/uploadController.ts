@@ -11,27 +11,25 @@ export const uploadController = (req: IncomingMessage, res: ServerResponse): voi
   let fileSaved = false;
 
   // Обработка загружаемого файла
-  busboy.on(
-    'file', (name, file, {filename}) => {
-        if (!filename) {
-            file.resume(); // пропускаем, если нет имени
-            return;
-        }
-      const saveTo = path.join(uploadPath, filename);
-      const writeStream = fs.createWriteStream(saveTo);
-
-      file.pipe(writeStream);
-
-      file.on('end', () => {
-        console.log(`✅ Файл ${name} успешно сохранён`);
-        fileSaved = true;
-      });
-
-      file.on('error', (err) => {
-        console.error(`❌ Ошибка при получении файла:`, err);
-      });
+  busboy.on('file', (name, file, { filename }) => {
+    if (!filename) {
+      file.resume(); // пропускаем, если нет имени
+      return;
     }
-  );
+    const saveTo = path.join(uploadPath, filename);
+    const writeStream = fs.createWriteStream(saveTo);
+
+    file.pipe(writeStream);
+
+    file.on('end', () => {
+      console.log(`✅ Файл ${name} успешно сохранён`);
+      fileSaved = true;
+    });
+
+    file.on('error', (err) => {
+      console.error(`❌ Ошибка при получении файла:`, err);
+    });
+  });
 
   // Завершение загрузки
   busboy.on('finish', () => {

@@ -9,7 +9,7 @@ export const handleRequest = (req: IncomingMessage, res: ServerResponse) => {
     return homeController(req, res);
   }
 
-   if (url === '/upload' && method === 'POST') {
+  if (url === '/upload' && method === 'POST') {
     return uploadController(req, res);
   }
 
