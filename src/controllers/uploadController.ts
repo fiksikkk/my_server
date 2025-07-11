@@ -22,7 +22,7 @@ export const uploadController = (req: IncomingMessage, res: ServerResponse): voi
     file.pipe(writeStream);
 
     file.on('end', () => {
-      console.log(`✅ Файл ${name} успешно сохранён`);
+      console.log(`✅ Файл ${filename} успешно сохранён`);
       fileSaved = true;
     });
 
