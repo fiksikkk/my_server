@@ -757,6 +757,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"dotenv@npm:^17.2.2":
+  version: 17.2.2
+  resolution: "dotenv@npm:17.2.2"
+  checksum: 673825993b16a6722332b2e1f8c24b1c2ebe3dd3b81ae5df9be35f1483bf52e0b463555b09da65b756c7abee3cf55ba2ae2628c22874a899556fa787fac56019
+  languageName: node
+  linkType: hard
+
 "eastasianwidth@npm:^0.2.0":
   version: 0.2.0
   resolution: "eastasianwidth@npm:0.2.0"
@@ -1633,6 +1640,7 @@ __metadata:
     "@types/busboy": ^1.5.4
     "@types/node": ^24.0.13
     busboy: ^1.6.0
+    dotenv: ^17.2.2
     eslint: ^9.30.1
     eslint-config-prettier: ^10.1.5
     eslint-plugin-prettier: ^5.5.1
